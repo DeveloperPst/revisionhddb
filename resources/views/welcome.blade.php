@@ -11,6 +11,7 @@
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/jpg" href="../public/logo.png"/>
         <title>MonitoreoDB</title>
 
         <!-- Fonts -->
@@ -28,12 +29,19 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-          
+    
+    <div class="items-top justify-center bg-gray-100 dark:bg-gray-900">
+           <table align="center">
+            <tr>
+                <td><h2 class="mt-3 text-gray-600 dark:text-gray-400 text-md">PLATAFORMA MONITOREO DE ALMACENAMIENTO DE BASES DE DATOS </h2></td>
+                <td><img src="../public/logo.png" height='50'></td>
+            </tr>
+        </table>
+    </div>
+        <div class="items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style='text-align: center;'>
                 
             <table>
-                <th colspan='100%'><div class="mt-2 text-gray-600 dark:text-gray-400 text-sm"><h2>PLATAFORMA DE MONITOREO DE ALMACENAMIENTO DE BASES DE DATOS</h2></div></th>
                 <tr>
                     <td> <!-- CONTENIDO PRIMERA COLUMNA -->
 
@@ -47,7 +55,7 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(1,2);
@@ -63,7 +71,7 @@
                                <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>FRA</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(1,1);
@@ -87,7 +95,7 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA01</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(2,3);
@@ -104,7 +112,7 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA02</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(2,4);
@@ -121,7 +129,7 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>FRA</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(2,5);
@@ -135,9 +143,9 @@
                     </td>
                     <td> <!-- CONTENIDO TERCERA COLUMNA -->
 
-                     <table style = 'padding-left: 90px;'>
-                     <tr><td>
-                     <h2 class="mt-2 text-gray-600 dark:text-gray-400 text-md">WEB</h2>
+                    <table style = 'padding-left: 90px;'>
+                    <tr><td>
+                    <h2 class="mt-2 text-gray-600 dark:text-gray-400 text-md">WEB</h2>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
                         <div class="p-4">
@@ -145,13 +153,11 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA01</div>
                             </div>
 
-                            <div class="ml-12 d-flex justify-content-center">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    <div  style='text-align: center;'>
                                     <?php
-                                        $sesiones->consulta_estado(2,6);                                        
-                                    ?> 
-                                    </div>
+                                        $sesiones->consulta_estado(2,6);
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -164,11 +170,11 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA02</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(2,7);
-                                    ?>     
+                                    ?> 
                                 </div>
                             </div>
                         </div>
@@ -181,7 +187,7 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>FRA</div>
                             </div>
 
-                            <div class="ml-12">
+                            <div class="flex items-center">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <?php
                                         $sesiones->consulta_estado(2,8);
@@ -202,6 +208,5 @@
                 </div>
             </div>
         </div>
-
     </body>
 </html>

@@ -53,14 +53,13 @@ Class Sesiones {
                 return 0;
                 } else {
                     $id = 1;
-                    $usado = round($row[2] / 1024 / 1024 / 1024);
-                    $libre = round($row[3] / 1024 / 1024 / 1024);
-                    $total = $row[2]+$row[3];
-                    $totalf = round($total / 1024 / 1024 / 1024);
-                    $this->visualizar_gráfico($id, $usado, $libre, $totalf);
+                    $usado = round($row[2] / 1024 / 1024 / 1024, 2);
+                    $libre = round($row[3] / 1024 / 1024 / 1024, 2);
+                    $total = $usado + $libre;
+                    $this->visualizar_gráfico($id, $usado, $libre, $total);
                     echo "Usado: ".$usado." GB<br>
                     Libre: ".$libre." GB<br>
-                    Total: ".$totalf." GB";
+                    Total: ".$total." GB";
                 }
             break;
 
@@ -91,9 +90,9 @@ Class Sesiones {
                     $total = $row[0];
 
                     $this->visualizar_gráfico($id, $usado, $libre, $total);
-                    echo "Usado: ".round($usado)." GB<br>
-                    Libre: ".round($libre)." GB<br>
-                    Total: ".round($total)." GB";                
+                    echo "Usado: ".$usado." GB<br>
+                    Libre: ".$libre." GB<br>
+                    Total: ".$total." GB";
                 }
                 break;
 
@@ -133,9 +132,9 @@ Class Sesiones {
                 return 0;
                 } else {
                     $id = 4;
-                    $usado = round($row[4] / 1024);
-                    $libre = round($row[1] / 1024);
-                    $total = round($usado + $libre);
+                    $usado = round($row[4] / 1024, 2);
+                    $libre = round($row[1] / 1024, 2);
+                    $total = round($usado + $libre, 0);
 
                     $this->visualizar_gráfico($id, $usado, $libre, $total);
                     echo "Usado: ".$usado." GB<br>
@@ -156,9 +155,9 @@ Class Sesiones {
                     return 0;
                     } else {
                     $id = 5;
-                    $usado = round($row[4] / 1024);
-                    $libre = round($row[1] / 1024);
-                    $total = round($usado + $libre);
+                    $usado = round($row[4] / 1024, 2);
+                    $libre = round($row[1] / 1024, 2);
+                    $total = round($usado + $libre, 0);
 
                     $this->visualizar_gráfico($id, $usado, $libre, $total);
                     echo "Usado: ".$usado." GB<br>
@@ -183,7 +182,7 @@ Class Sesiones {
                         $usado = round($row[4] / 1024);
                         $libre = round($row[1] / 1024);
                         $total = round($usado + $libre);
-    
+        
                         $this->visualizar_gráfico($id, $usado, $libre, $total);
                         echo "Usado: ".$usado." GB<br>
                         Libre: ".$libre." GB<br>
@@ -203,9 +202,9 @@ Class Sesiones {
                         return 0;
                         } else {
                             $id = 7;
-                            $usado = round($row[4] / 1024);
-                            $libre = round($row[1] / 1024);
-                            $total = round($usado + $libre);
+                            $usado = round($row[4] / 1024, 2);
+                            $libre = round($row[1] / 1024, 2);
+                            $total = round($usado + $libre, 0);
         
                             $this->visualizar_gráfico($id, $usado, $libre, $total);
                             echo "Usado: ".$usado." GB<br>
@@ -226,9 +225,9 @@ Class Sesiones {
                         return 0;
                         } else {
                         $id = 8;
-                        $usado = round($row[4] / 1024);
-                        $libre = round($row[1] / 1024);
-                        $total = round($usado + $libre);
+                        $usado = round($row[4] / 1024, 2);
+                        $libre = round($row[1] / 1024, 2);
+                        $total = round($usado + $libre, 0);
     
                         $this->visualizar_gráfico($id, $usado, $libre, $total);
                         echo "Usado: ".$usado." GB<br>
@@ -256,6 +255,7 @@ echo "
 <script src='code/modules/accessibility.js'></script>
 
 <figure class='highcharts-figure-".$id."'>
+<p class='mt-2 text-gray-600 dark:text-gray-400 text-sm'>".round($usado*100/$total, 1)." % utilizado</p>
     <div id='container-speed-".$id."' class='chart-container'></div>
 </figure>
 
@@ -331,7 +331,7 @@ var chartSpeed = Highcharts.chart('container-speed-".$id."', Highcharts.merge(ga
     },
 
     series: [{
-        data: [".$usado."]
+        data: [".round($usado, 0)."]
     }]
 
 }));

@@ -208,5 +208,8 @@
                 </div>
             </div>
         </div>
+        <script>
+            setInterval("location.reload()",120000);
+        </script>
     </body>
 </html>

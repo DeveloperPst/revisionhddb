@@ -54,8 +54,8 @@ Class Sesiones {
                 } else {
                     $id = 1;
                     $usado = round($row[2] / 1024 / 1024 / 1024, 2);
-                    $libre = round($row[3] / 1024 / 1024 / 1024, 2);
-                    $total = $usado + $libre;
+                    $libre = round($row[3]  / 1024 / 1024, 2);
+                    $total = round($usado + $libre, 2);
                     $this->visualizar_gráfico($id, $usado, $libre, $total);
                     echo "Usado: ".$usado." GB<br>
                     Libre: ".$libre." GB<br>
@@ -248,25 +248,20 @@ echo "
     border-radius: 7px;
 }
 </style>
-
 <script src='code/highcharts.js'></script>
 <script src='code/highcharts-more.js'></script>
 <script src='code/modules/solid-gauge.js'></script>
 <script src='code/modules/accessibility.js'></script>
-
 <figure class='highcharts-figure-".$id."'>
 <p class='mt-2 text-gray-600 dark:text-gray-400 text-sm'>".round($usado*100/$total, 1)." % utilizado</p>
     <div id='container-speed-".$id."' class='chart-container'></div>
 </figure>
-
 <script type='text/javascript'>
 var gaugeOptions = {
     chart: {
         type: 'solidgauge'
     },
-
     title: null,
-
     pane: {
         center: ['50%', '85%'],
         size: '170%',
@@ -280,15 +275,12 @@ var gaugeOptions = {
             shape: 'arc'
         }
     },
-
     exporting: {
         enabled: false
     },
-
     tooltip: {
         enabled: false
     },
-
     // the value axis
     yAxis: {
         stops: [
@@ -307,7 +299,6 @@ var gaugeOptions = {
             y: 16
         }
     },
-
     plotOptions: {
         solidgauge: {
             dataLabels: {
@@ -318,22 +309,21 @@ var gaugeOptions = {
         }
     }
 };
-
 // The speed gauge
 var chartSpeed = Highcharts.chart('container-speed-".$id."', Highcharts.merge(gaugeOptions, {
     yAxis: {
+        labels: {
+            enabled: false
+        },
         min: 0,
         max: ".$total.",
     },
-
     credits: {
         enabled: false
     },
-
     series: [{
         data: [".round($usado, 0)."]
     }]
-
 }));
 </script>";
 

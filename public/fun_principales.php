@@ -53,8 +53,8 @@ Class Sesiones {
                 return 0;
                 } else {
                     $id = 1;
-                    $usado = round($row[2] / 1024 / 1024 / 1024, 2);
-                    $libre = round($row[3]  / 1024 / 1024, 2);
+                    $usado = round($row[2] / (1024*1024*1024), 2);
+                    $libre = round($row[3]  / (1024*1024*1024), 2);
                     $total = round($usado + $libre, 2);
                     $this->visualizar_gráfico($id, $usado, $libre, $total);
                     echo "Usado: ".$usado." GB<br>

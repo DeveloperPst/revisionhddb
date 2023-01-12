@@ -31,17 +31,28 @@
     <body class="antialiased">
     
     <div class="items-top justify-center bg-gray-100 dark:bg-gray-900">
-           <table align="center">
-            <tr>
-                <td><h2 class="mt-3 text-gray-600 dark:text-gray-400 text-md">PLATAFORMA MONITOREO DE ALMACENAMIENTO DE BASES DE DATOS </h2></td>
-                <td><img src="../public/logo.png" height='50'></td>
-            </tr>
-        </table>
+    <header id="main-header">
+		
+        <h2 class="mt-2 text-gray-600 dark:text-gray-400 text-md">MONITOREO ALMACENAMIENTO DB</h2>
     </div>
+    <style>
+        #main-header {
+            background-color: rgb(31,41,55);
+            color: white;
+            height: 50px;
+            text-align: center;
+
+            width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+            left: 0; /* Posicionamos la cabecera al lado izquierdo */
+            top: 0; /* Posicionamos la cabecera pegada arriba */
+            position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+        }
+    </style>
         <div class="items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style='text-align: center;'>
                 
             <table>
+
                 <tr>
                     <td> <!-- CONTENIDO PRIMERA COLUMNA -->
 
@@ -50,7 +61,7 @@
                     <h2 class="mt-2 text-gray-600 dark:text-gray-400 text-md">CINTR</h2>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                           <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA</div>
                             </div>
@@ -66,7 +77,7 @@
                         <tr><td>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>FRA</div>
                             </div>
@@ -85,12 +96,12 @@
                     </td>
                     <td> <!-- CONTENIDO SEGUNDA COLUMNA -->
 
-                    <table style = 'padding-left: 90px;'>
+                    <table style = 'padding-left: 20px;'>
                     <tr><td>
-                    <h2 class="mt-2 text-gray-600 dark:text-gray-400 text-md">DEI</h2>
+                    <br><h2 class="mt-4 text-gray-600 dark:text-gray-400 text-md">DEI</h2>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA01</div>
                             </div>
@@ -107,7 +118,7 @@
                         <tr><td>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA02</div>
                             </div>
@@ -124,7 +135,7 @@
                         <tr><td>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>FRA</div>
                             </div>
@@ -143,12 +154,12 @@
                     </td>
                     <td> <!-- CONTENIDO TERCERA COLUMNA -->
 
-                    <table style = 'padding-left: 90px;'>
+                    <table style = 'padding-left: 20px;'>
                     <tr><td>
-                    <h2 class="mt-2 text-gray-600 dark:text-gray-400 text-md">WEB</h2>
+                    <br><h2 class="mt-4 text-gray-600 dark:text-gray-400 text-md">WEB</h2>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA01</div>
                             </div>
@@ -165,7 +176,7 @@
                         <tr><td>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>DATA02</div>
                             </div>
@@ -182,7 +193,7 @@
                         <tr><td>
                         <div class="mt-4 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                         <div class="grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-4">
+                        <div class="p-2">
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold" style='color: white;'>FRA</div>
                             </div>

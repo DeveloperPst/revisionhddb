@@ -225,9 +225,9 @@ Class Sesiones {
                         return 0;
                         } else {
                         $id = 8;
-                        $usado = round($row[4] / 1024, 2);
-                        $libre = round($row[1] / 1024, 2);
-                        $total = round($usado + $libre, 0);
+                        $usado = $row[4] / 1024;
+                        $libre = $row[1] / 1024;
+                        $total = $usado + $libre;
     
                         $this->visualizar_gráfico($id, $usado, $libre, $total);
                         echo "Usado: ".$usado." GB<br>
@@ -243,8 +243,8 @@ Class Sesiones {
 echo "
 <style type='text/css'>
 .highcharts-figure-".$id." .chart-container {
-    width: 150px;
-    height: 90px;
+    width: 170px;
+    height: 100px;
     border-radius: 7px;
 }
 </style>
@@ -253,7 +253,7 @@ echo "
 <script src='code/modules/solid-gauge.js'></script>
 <script src='code/modules/accessibility.js'></script>
 <figure class='highcharts-figure-".$id."'>
-<p class='mt-2 text-gray-600 dark:text-gray-400 text-sm'>".round($usado*100/$total, 1)." % utilizado</p>
+<p class='mt-2 text-gray-600 dark:text-gray-400 text-sm'>".number_format($usado*100/$total, 2)." % utilizado</p>
     <div id='container-speed-".$id."' class='chart-container'></div>
 </figure>
 <script type='text/javascript'>
@@ -322,7 +322,7 @@ var chartSpeed = Highcharts.chart('container-speed-".$id."', Highcharts.merge(ga
         enabled: false
     },
     series: [{
-        data: [".round($usado, 0)."]
+        data: [".$usado."]
     }]
 }));
 </script>";
